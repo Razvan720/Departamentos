@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 28-feb-2020 17:43:35 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Entidades.Empleados" table="empleados" catalog="departamentos" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="departamento" class="Entidades.Departamento" fetch="select">
+            <column name="departamento_id" not-null="true" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="nombre" length="45" />
+        </property>
+        <property name="apellidos" type="string">
+            <column name="apellidos" length="80" />
+        </property>
+        <property name="fechanac" type="string">
+            <column name="fechanac" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>
